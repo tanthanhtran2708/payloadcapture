@@ -19,6 +19,7 @@ app.post('/', (request, response) => {
 	response.send({message: `Your JSON = ${JSON.stringify(jsonBody)}`})
 })
 
-app.listen(1234, () => {
-	console.log('Listen to port 1234')
-})
+var port = server.listen(process.env.PORT || 3000);
+app.listen(port, () =>{
+	console.log(`App listening on ${port}`)
+});
